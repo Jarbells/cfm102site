@@ -1,90 +1,100 @@
+// src/main/java/com/culturafm/site/dto/ProgramDTO.java
+
 package com.culturafm.site.dto;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
-
 import com.culturafm.site.entities.Program;
 
 public class ProgramDTO {
 
-	private Long id;
-	private String name;
-	private String presenter;
-	private String daysOfWeek;
-	private LocalTime startTime;
-	private LocalTime endTime;
-	
+    private Long id;
+    private String name;
+    private String daysOfWeek;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private List<String> imageUrls = new ArrayList<>();
-	
-	public ProgramDTO() {
-	}
-	
-	public ProgramDTO(Program entity) {
-		BeanUtils.copyProperties(entity, this);
-        // Lógica para converter o Set<ProgramImage> em uma List<String>
-        if (entity.getImages() != null) {
-            this.imageUrls = entity.getImages().stream()
+    
+    // NOVO CAMPO: Lista de LocutorDTO
+    private List<LocutorDTO> announcers = new ArrayList<>();
+
+    public ProgramDTO() {
+    }
+    
+    public ProgramDTO(Program entity) {
+        // Copia os campos simples (id, name, daysOfWeek, etc.)
+        BeanUtils.copyProperties(entity, this, "images", "announcers");
+
+        // Converte a coleção de ProgramImage em uma lista de Strings (URLs)
+        this.imageUrls = entity.getImages().stream()
                                   .map(image -> image.getImageUrl())
-                                  .toList();
-        }
-	}
-	
-	public Long getId() {
-		return id;
-	}
+                                  .collect(Collectors.toList());
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+        // Converte a coleção de Locutor (entidade) em uma lista de LocutorDTO
+        this.announcers = entity.getAnnouncers().stream()
+                                    .map(locutor -> new LocutorDTO(locutor))
+                                    .collect(Collectors.toList());
+    }
 
-	public String getName() {
-		return name;
-	}
+    // Getters e Setters
+    public Long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getPresenter() {
-		return presenter;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPresenter(String presenter) {
-		this.presenter = presenter;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getDaysOfWeek() {
-		return daysOfWeek;
-	}
+    public String getDaysOfWeek() {
+        return daysOfWeek;
+    }
 
-	public void setDaysOfWeek(String daysOfWeek) {
-		this.daysOfWeek = daysOfWeek;
-	}
+    public void setDaysOfWeek(String daysOfWeek) {
+        this.daysOfWeek = daysOfWeek;
+    }
 
-	public LocalTime getStartTime() {
-		return startTime;
-	}
+    public LocalTime getStartTime() {
+        return startTime;
+    }
 
-	public void setStartTime(LocalTime startTime) {
-		this.startTime = startTime;
-	}
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
 
-	public LocalTime getEndTime() {
-		return endTime;
-	}
+    public LocalTime getEndTime() {
+        return endTime;
+    }
 
-	public void setEndTime(LocalTime endTime) {
-		this.endTime = endTime;
-	}
-	
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
+    }
+
     public List<String> getImageUrls() {
         return imageUrls;
     }
-    
+
     public void setImageUrls(List<String> imageUrls) {
         this.imageUrls = imageUrls;
+    }
+
+    // Getter e Setter para o novo campo de locutores
+    public List<LocutorDTO> getAnnouncers() {
+        return announcers;
+    }
+
+    public void setAnnouncers(List<LocutorDTO> announcers) {
+        this.announcers = announcers;
     }
 }

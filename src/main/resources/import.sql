@@ -1,36 +1,62 @@
--- Programação de Segunda a Sexta
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Sertão Repente e Viola', 'Guilherme Calixto', 'Segunda a Sábado', '05:00:00', '06:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Bom Dia Alegria', 'Teixeira Filho', 'Segunda a Sexta', '06:00:00', '07:30:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Jornal da Dom Bosco', 'Institucional', 'Segunda a Sexta', '07:30:00', '08:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Manhã da Cultura', 'Vanderley Paulino', 'Segunda a Sexta', '08:00:00', '10:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Experiência de Deus', 'Padre Reginaldo Manzotti', 'Segunda a Sábado', '10:00:00', '11:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Esporte é Cultura Primeira Edição', 'Teixeira Filho e Equipe Esportiva Everton Lopes', 'Segunda a Sexta', '11:00:00', '11:30:00');
--- Jornal da Cultura de Segunda a Quinta (horário normal)
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Jornal da Cultura', 'Jarbas Santos', 'Segunda a Quinta', '11:30:00', '13:00:00');
+-- 1. CADASTRO DE LOCUTORES
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Vanderley Paulino', 'Apresentador do Manhã da Cultura', '/images/locutores/vanderley-paulino.jpg');
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Jarbas Santos', 'Apresentador do Jornal da Cultura', '/images/locutores/jarbas-santos.jpg');
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Genivaldo Ferreira', 'Apresentador do Revista no Rádio', '/images/locutores/genivaldo-ferreira.jpg');
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Teixeira Filho', 'Apresentador do Esporte é Cultura', '/images/locutores/teixeira-filho.jpg');
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Equipe Everton Lopes', 'Comando da Equipe Esportiva', '/images/locutores/equipe-everton-lopes.jpg');
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Guilherme Calixto', 'Apresentador do Sertão Repente e Viola', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Padre Reginaldo Manzotti', 'Apresentador do Experiência de Deus', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Luisa Sousa', 'Apresentadora do SINDSEP Em Ação', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Padre João Carlos', 'Apresentador do Programa Tempo de Paz', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Jonas Lopes', 'Membro da Equipe Esportiva', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Eronilton Buriti', 'Apresentador do Bodega Ecológica', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Williame Marques', 'Apresentador do A Voz da Diocese', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Padre Pablo', 'Apresentador do A Voz da Diocese', NULL);
+INSERT INTO tb_locutor (name, bio, photo_url) VALUES ('Luciano Silva', 'Apresentador do O Rei do Baião', NULL);
 
--- Jornal da Cultura na Sexta (horário mais curto, após o SINDSEP)
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Jornal da Cultura', 'Jarbas Santos', 'Sexta-Feira', '12:00:00', '13:00:00');
+-- 2. CADASTRO DE PROGRAMAS
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Sertão Repente e Viola', 'Segunda a Sábado', '05:00:00', '06:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Bom Dia Alegria', 'Segunda a Sexta', '06:00:00', '07:30:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Jornal da Dom Bosco', 'Segunda a Sexta', '07:30:00', '08:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Manhã da Cultura', 'Segunda a Sexta', '08:00:00', '10:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Experiência de Deus', 'Segunda a Sábado', '10:00:00', '11:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Esporte é Cultura Primeira Edição', 'Segunda a Sexta', '11:00:00', '11:30:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Jornal da Cultura', 'Segunda a Quinta', '11:30:00', '13:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Jornal da Cultura', 'Sexta-Feira', '12:00:00', '13:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Especial Musical', 'Segunda a Sexta', '13:00:00', '14:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Revista no Rádio', 'Segunda a Sexta', '14:00:00', '16:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Programa Tempo de Paz', 'Segunda a Sexta', '16:00:00', '17:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Missa FM Dom Bosco', 'Segunda a Sexta', '17:00:00', '17:45:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Vatican News', 'Segunda a Sexta', '17:45:00', '18:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Santo Terço', 'Segunda a Sexta', '18:00:00', '18:30:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Esporte é Cultura Segunda Edição', 'Segunda a Sexta', '18:30:00', '19:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('A Voz do Brasil', 'Segunda a Sexta', '19:00:00', '20:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('SINDSEP Em Ação', 'Sexta-Feira', '11:30:00', '12:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Transmissão da Santa Missa', 'Sábado', '06:00:00', '07:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Bodega Ecológica', 'Sábado', '07:00:00', '07:30:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Sindicato dos Trabalhadores Rurais', 'Sábado', '07:30:00', '08:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Hora da Caridade', 'Sábado', '08:00:00', '09:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('A Voz da Diocese', 'Sábado', '09:00:00', '10:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('O Rei do Baião', 'Domingo', '12:00:00', '15:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('Tarde Esportiva', 'Domingo', '15:00:00', '19:00:00');
+INSERT INTO tb_program (name, days_of_week, start_time, end_time) VALUES ('A Santa Missa da Catedral', 'Domingo', '19:00:00', '20:00:00');
 
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Especial Musical', 'Programação Musical', 'Segunda a Sexta', '13:00:00', '14:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Revista no Rádio', 'Genivaldo Ferreira', 'Segunda a Sexta', '14:00:00', '16:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Programa Tempo de Paz', 'Padre João Carlos', 'Segunda a Sexta', '16:00:00', '17:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Missa FM Dom Bosco', 'Institucional', 'Segunda a Sexta', '17:00:00', '17:45:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Vatican News', 'A Rádio do Papa', 'Segunda a Sexta', '17:45:00', '18:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Santo Terço', 'Institucional', 'Segunda a Sexta', '18:00:00', '18:30:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Esporte é Cultura Segunda Edição', 'Jonas Lopes e Equipe Esportiva Everton Lopes', 'Segunda a Sexta', '18:30:00', '19:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('A Voz do Brasil', 'Governo Federal', 'Segunda a Sexta', '19:00:00', '20:00:00');
-
--- Programa específico da Sexta-Feira (exceção à regra)
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('SINDSEP Em Ação', 'Luisa Sousa', 'Sexta-Feira', '11:30:00', '12:00:00');
-
--- Programação de Sábado
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Transmissão da Santa Missa', 'Comunidade Boa Semente', 'Sábado', '06:00:00', '07:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Bodega Ecológica', 'Eronilton Buriti', 'Sábado', '07:00:00', '07:30:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Sindicato dos Trabalhadores Rurais', 'Institucional', 'Sábado', '07:30:00', '08:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Hora da Caridade', 'Vicentinos', 'Sábado', '08:00:00', '09:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('A Voz da Diocese', 'Williame Marques e Padre Pablo', 'Sábado', '09:00:00', '10:00:00');
-
--- Programação de Domingo
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('O Rei do Baião', 'Luciano Silva', 'Domingo', '12:00:00', '15:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('Tarde Esportiva', 'Equipe Everton Lopes', 'Domingo', '15:00:00', '19:00:00');
-INSERT INTO tb_program (name, presenter, days_of_week, start_time, end_time) VALUES ('A Santa Missa da Catedral', 'Paróquia da Catedral', 'Domingo', '19:00:00', '20:00:00');
+-- 3. RELACIONAMENTO PROGRAMAS E LOCUTORES
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (1, 6);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (2, 4);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (4, 1);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (5, 7);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (6, 4);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (6, 5);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (7, 2);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (8, 2);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (10, 3);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (11, 9);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (15, 10);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (15, 5);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (17, 8);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (19, 11);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (22, 12);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (22, 13);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (23, 14);
+INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (24, 5);
