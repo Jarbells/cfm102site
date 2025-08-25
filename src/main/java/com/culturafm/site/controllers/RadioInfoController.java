@@ -1,0 +1,27 @@
+package com.culturafm.site.controllers;
+
+import com.culturafm.site.dto.RadioInfoDTO;
+import com.culturafm.site.services.RadioInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(value = "/radio-info")
+public class RadioInfoController {
+
+    @Autowired
+    private RadioInfoService service;
+
+    @GetMapping
+    public ResponseEntity<RadioInfoDTO> getInfo() {
+        RadioInfoDTO dto = service.getInfo();
+        return ResponseEntity.ok().body(dto);
+    }
+
+    @PutMapping
+    public ResponseEntity<RadioInfoDTO> updateInfo(@RequestBody RadioInfoDTO dto) {
+        dto = service.updateInfo(dto);
+        return ResponseEntity.ok().body(dto);
+    }
+}

@@ -50,7 +50,7 @@ public class Program {
 	}
 
 	// CORREÇÃO: Construtor com todos os campos atualizado. Removi o antigo parâmetro "presenter".
-	// Note que não incluímos coleções (Set) no construtor com argumentos, pois elas são gerenciadas de outra forma.
+	// Não incluí coleções (Set) no construtor com argumentos, pois elas são gerenciadas de outra forma.
 	public Program(Long id, String name, String daysOfWeek, LocalTime startTime, LocalTime endTime) {
 		this.id = id;
 		this.name = name;

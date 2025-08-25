@@ -60,3 +60,25 @@ INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (22, 12);
 INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (22, 13);
 INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (23, 14);
 INSERT INTO tb_program_locutor (program_id, locutor_id) VALUES (24, 5);
+
+-- 4. INFORMAÇÕES GLOBAIS DA RÁDIO (Registro Único)
+INSERT INTO tb_radio_info (id, address_street, address_city, address_state, email_contact) VALUES (1, 'Rua Monsenhor Salviano de Almeida Pinto', 'Quixadá', 'CE', 'contato@culturafm.com.br');
+
+--
+-- 5. CADASTRO DE NOTÍCIAS
+--
+INSERT INTO tb_news(title, subtitle, content, author, image_url, publication_date) VALUES ('Festival de Violeiros agita o fim de semana em Quixadá', 'Evento tradicional reuniu grandes nomes da música sertaneja de raiz na Praça da Cultura, atraindo grande público.', 'Durante todo o fim de semana, a cidade de Quixadá respirou a autêntica cultura nordestina com a realização do tradicional Festival de Violeiros. O evento, apoiado pela Rádio Cultura FM, contou com apresentações de artistas locais e regionais, que emocionaram a plateia com seus repentes e canções. A organização estima que mais de 5 mil pessoas passaram pela praça durante os dois dias de festa.', 'Redação Cultura FM', '/images/news/festival-violeiros.jpg', '2025-08-22 10:00:00');
+
+INSERT INTO tb_news(title, subtitle, content, author, image_url, publication_date) VALUES ('Açude Cedro atinge marca histórica de volume', 'Boas chuvas na região animam agricultores e garantem abastecimento hídrico para os próximos meses, trazendo alívio para o sertão.', 'O Açude do Cedro, um dos cartões postais de Quixadá, atingiu nesta segunda-feira (25) uma de suas maiores marcas de volume acumulado dos últimos 10 anos, segundo dados dos órgãos de monitoramento. As recentes chuvas na bacia hidrográfica foram essenciais para a recuperação do reservatório. A notícia traz esperança para a agricultura familiar e para o abastecimento da cidade.', 'Jarbas Santos', '/images/news/acude-cedro.jpg', '2025-08-25 08:30:00');
+
+INSERT INTO tb_news(title, subtitle, content, author, image_url, publication_date) VALUES ('Quixadá F.C. se prepara para a estreia no campeonato estadual', 'Equipe técnica e jogadores estão confiantes para o primeiro jogo da temporada, que acontece no próximo domingo no estádio Abilhão.', 'O Quixadá Futebol Clube intensificou os treinos esta semana visando a sua estreia no campeonato estadual. Em entrevista à Rádio Cultura, o técnico afirmou que o time está focado e bem preparado para enfrentar o seu primeiro adversário. A expectativa é de casa cheia para apoiar o Canarinho do Sertão em busca do acesso.', 'Equipe Everton Lopes', '/images/news/quixada-fc.jpg', '2025-08-25 15:00:00');
+
+
+--
+-- 6. CADASTRO DE EVENTOS
+--
+INSERT INTO tb_event(event_name, description, location, image_url, event_date) VALUES ('Feira de Artesanato na Praça', 'A tradicional feira de artesanato local volta a acontecer com dezenas de expositores, comidas típicas e música ao vivo.', 'Praça José de Barros, Centro', '/images/events/feira-artesanato.jpg', '2025-08-30 18:00:00');
+
+INSERT INTO tb_event(event_name, description, location, image_url, event_date) VALUES ('Festejos da Padroeira de Quixadá', 'Novenas, missas e quermesses em celebração à Nossa Senhora Imaculada Conceição, padroeira de Quixadá.', 'Catedral de Jesus, Maria e José', '/images/events/festejos-padroeira.jpg', '2025-10-28 19:00:00');
+
+INSERT INTO tb_event(event_name, description, location, image_url, event_date) VALUES ('Show de Verão com Sol Maior', 'A banda Sol Maior agita o início do verão com os maiores sucessos do forró e axé no Cedro Club.', 'Balneário Cedro Club', '/images/events/show-verao.jpg', '2025-12-21 22:00:00');
